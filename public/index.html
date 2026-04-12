@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books API Documentation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>📚 Books API Documentation</h1>
+      <p>Interactive & Responsive API Docs</p>
+    </header>
+
+    <main class="container">
+      <!-- GET All Books -->
+      <section class="endpoint get">
+        <h2>GET /api/v1/books</h2>
+        <p>Retrieve all books</p>
+        <button onclick="fetchBooks()">Try it</button>
+        <pre id="getBooksResult">Response will appear here...</pre>
+      </section>
+
+      <!-- POST Create Book -->
+      <section class="endpoint post">
+        <h2>POST /api/v1/books</h2>
+        <p>Create a new book</p>
+        <textarea id="postBookBody">
+{
+  "title": "Book Title",
+  "author": "Author Name",
+  "price": 25
+}
+    </textarea
+        >
+        <button onclick="createBook()">Send</button>
+        <pre id="postBookResult">Response will appear here...</pre>
+      </section>
+
+      <!-- GET Book by ID -->
+      <section class="endpoint get">
+        <h2>GET /api/v1/books/:id</h2>
+        <p>Retrieve a single book by ID</p>
+        <input type="text" id="getBookId" placeholder="Enter book ID" />
+        <button onclick="getBook()">Try it</button>
+        <pre id="getBookResult">Response will appear here...</pre>
+      </section>
+
+      <!-- PATCH Update Book -->
+      <section class="endpoint patch">
+        <h2>PATCH /api/v1/books/:id</h2>
+        <p>Update a book by ID</p>
+        <input type="text" id="updateBookId" placeholder="Enter book ID" />
+        <textarea id="updateBookBody">
+{
+  "title": "Updated Title",
+  "author": "Updated Author",
+  "price": 30
+}
+    </textarea
+        >
+        <button onclick="updateBook()">Send</button>
+        <pre id="updateBookResult">Response will appear here...</pre>
+      </section>
+
+      <!-- DELETE Book -->
+      <section class="endpoint delete">
+        <h2>DELETE /api/v1/books/:id</h2>
+        <p>Delete a book by ID</p>
+        <input type="text" id="deleteBookId" placeholder="Enter book ID" />
+        <button onclick="deleteBook()">Delete</button>
+        <pre id="deleteBookResult">Response will appear here...</pre>
+      </section>
+    </main>
+
+    <script>
+      async function fetchBooks() {
+        const res = await fetch("/api/v1/books");
+        const data = await res.json();
+        document.getElementById("getBooksResult").textContent = JSON.stringify(
+          data,
+          null,
+          2,
+        );
+      }
+
+      async function createBook() {
+        const body = JSON.parse(document.getElementById("postBookBody").value);
+        const res = await fetch("/api/v1/books", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        });
+        const data = await res.json();
+        document.getElementById("postBookResult").textContent = JSON.stringify(
+          data,
+          null,
+          2,
+        );
+      }
+
+      async function getBook() {
+        const id = document.getElementById("getBookId").value;
+        const res = await fetch(`/api/v1/books/${id}`);
+        const data = await res.json();
+        document.getElementById("getBookResult").textContent = JSON.stringify(
+          data,
+          null,
+          2,
+        );
+      }
+
+      async function updateBook() {
+        const id = document.getElementById("updateBookId").value;
+        const body = JSON.parse(
+          document.getElementById("updateBookBody").value,
+        );
+        const res = await fetch(`/api/v1/books/${id}`, {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        });
+        const data = await res.json();
+        document.getElementById("updateBookResult").textContent =
+          JSON.stringify(data, null, 2);
+      }
+
+      async function deleteBook() {
+        const id = document.getElementById("deleteBookId").value;
+        const res = await fetch(`/api/v1/books/${id}`, { method: "DELETE" });
+        const data = await res.json();
+        document.getElementById("deleteBookResult").textContent =
+          JSON.stringify(data, null, 2);
+      }
+    </script>
+  </body>
+</html>

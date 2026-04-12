@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #1e293b;
+  padding: 25px 20px;
+  text-align: center;
+}
+
+header h1 {
+  color: #38bdf8;
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+header p {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* Endpoint sections */
+.endpoint {
+  background-color: #1e293b;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border-left: 5px solid transparent;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.endpoint:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.endpoint h2 {
+  color: #facc15;
+  margin-bottom: 10px;
+}
+
+/* Method colors */
+.endpoint.get { border-left-color: #16a34a; }
+.endpoint.post { border-left-color: #2563eb; }
+.endpoint.patch { border-left-color: #f59e0b; }
+.endpoint.delete { border-left-color: #dc2626; }
+
+/* Buttons */
+button {
+  padding: 10px 16px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #38bdf8;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background-color: #0ea5e9;
+  transform: translateY(-1px);
+}
+
+/* Inputs and TextAreas */
+textarea, input[type="text"] {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background-color: #020617;
+  color: #e2e8f0;
+  font-family: monospace;
+  font-size: 0.95rem;
+  resize: vertical; 
+  overflow-x: auto;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea:focus, input[type="text"]:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 5px #38bdf8;
+}
+
+/* Pre blocks */
+pre {
+  background-color: #020617;
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  button, textarea, input[type="text"] {
+    font-size: 14px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+}
