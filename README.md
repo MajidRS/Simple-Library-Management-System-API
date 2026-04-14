@@ -89,7 +89,7 @@ The architecture is already **Database-Agnostic**, which makes the transition se
 
 ### 📥 Installation & Setup
 
-1. **Clone the repository:**
+1. **Clone the repository:**  
    ```bash
    git clone [https://github.com/MajidRS/Simple-Library-Management-System-API.git](https://github.com/MajidRS/Simple-Library-Management-System-API.git)
 
@@ -97,9 +97,33 @@ The architecture is already **Database-Agnostic**, which makes the transition se
    ```bash
    npm install
 
-2. **Run the Server:**
+## ⚙️ Configuration (.env)
+
+The project uses environment variables for easy configuration. Create a file named `.env` in the root directory and add the following variables:
+   ```text
+   PORT=3000
+
+## 🚀 Running the Server
+​
+To start the backend server, run the following command in your terminal:
    ```bash
    node server.js
+
+## 🔗 Accessing the API
+
+Once the server is running, you can interact with the API through the following channels:
+
+### 🌐 Base URL
+
+Access the raw API endpoints at:
+`http://localhost:3000`
+
+### 🎮 Interactive Testing (API Playground)
+
+You don't need Postman for basic testing! We have built a custom visual interface to test all endpoints directly from your browser:
+`http://localhost:3000/api-playground`
+
+> **Note:** If you changed the **PORT** in your `.env` file, make sure to use the updated port in the URLs above.
 
 ---
 
