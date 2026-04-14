@@ -102,12 +102,14 @@ The architecture is already **Database-Agnostic**, which makes the transition se
 The project uses environment variables for easy configuration. Create a file named `.env` in the root directory and add the following variables:
    ```text
    PORT=3000
+   ```
 
 ## 🚀 Running the Server
 ​
 To start the backend server, run the following command in your terminal:
    ```bash
    node server.js
+   ```   
 
 ## 🔗 Accessing the API
 
