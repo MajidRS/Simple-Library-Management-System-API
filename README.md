@@ -8,7 +8,13 @@ A professional, full-stack library management application built with **Node.js**
 
 Below is a screenshot of the interactive API documentation and the development environment:
 
-![Interactive API Documentation](./screenshots/preview.jpg)
+<details>
+  <summary>📸 Click to view API Playground Screenshot</summary>
+  <br>
+  <p align="center">
+    <img src="preview.jpg" width="350">
+  </p>
+</details>
 
 ---
 
@@ -118,7 +124,7 @@ Once the server is running, you can interact with the API through the following 
 ### 🌐 Base URL
 
 Access the raw API endpoints at:
-`http://localhost:3000/index.html`
+`http://localhost:3000/`
 
 > **Note:** If you changed the **PORT** in your `.env` file, make sure to use the updated port in the URLs above.
 
