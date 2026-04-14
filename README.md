@@ -12,7 +12,7 @@ Below is a screenshot of the interactive API documentation and the development e
   <summary>📸 Click to view API Playground Screenshot</summary>
   <br>
   <p align="center">
-    <img src="preview.jpg" width="350">
+    <img src="screenshots/preview.jpg" width="350">
   </p>
 </details>
 
