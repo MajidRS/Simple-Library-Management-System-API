@@ -118,12 +118,7 @@ Once the server is running, you can interact with the API through the following 
 ### 🌐 Base URL
 
 Access the raw API endpoints at:
-`http://localhost:3000`
-
-### 🎮 Interactive Testing (API Playground)
-
-You don't need Postman for basic testing! We have built a custom visual interface to test all endpoints directly from your browser:
-`http://localhost:3000/api-playground`
+`http://localhost:3000/index.html`
 
 > **Note:** If you changed the **PORT** in your `.env` file, make sure to use the updated port in the URLs above.
 
