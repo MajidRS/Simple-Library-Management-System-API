@@ -73,7 +73,7 @@ Below is a screenshot of the interactive API documentation and the development e
 ├── utils/              # AppError & helpers
 ├── public/             # Static UI (HTML/CSS)
 └── dev-data/           # JSON database storage
-
+```
 ---
 
 ## 🚀 Future Roadmap: Version 2.0
@@ -108,4 +108,5 @@ The architecture is already **Database-Agnostic**, which makes the transition se
 **Hadji Abdelmadjid** *Junior Node.js Backend Developer*
 
 > "Building efficient and scalable backend systems with passion."
+
 
